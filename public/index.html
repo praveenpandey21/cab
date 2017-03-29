@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+
+    <title>Starter Node and Angular</title>
+
+    <!-- CSS -->
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
+     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!--  <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrXOXyh_u-lhobLg2klhZkc3mNxfUBYJE&callback=initMap"></script>
+-->
+
+    <!-- ANGULAR CUSTOM -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers/MainCtrl.js"></script>
+    <script src="js/controllers/BookingCtrl.js"></script>
+    <script src="js/controllers/AdminCtrl.js"></script>
+    <script src="js/services/admin-crud-service.js"></script>
+    <script src="js/services/NerdService.js"></script>
+    <script src="js/controllers/MovieCtrl.js"></script>
+    <script src="js/services/GeekService.js"></script>
+    <script src="js/appRoutes.js"></script>
+
+</head>
+
+<body ng-app="sampleApp">
+    <div class="container">
+<div class="container">
+                  <header>
+                  <a class="navbar-brand" href="/"><img src="images/logo.png" alt="mRide_logo"></a></a>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a href="/fares"><i class="fa fa-home"></i>Fares</a></li>
+                        <li><a href="/admin"><i class="fa fa-home"></i>Admin</a></li>
+                        <li><a href="/register"><i class="fa fa-home"></i> New User?</a></li>
+                        <li><a href="/login"><i class="fa fa-shield"></i> Login</a></li>
+                        <li><a href="/contactus"><i class="fa fa-comment"></i> Contact Us</a></li>
+                      </ul>
+                    </header>
+                </div>
+            <hr>
+        <!-- ANGULAR DYNAMIC CONTENT -->
+        <div ng-view></div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.js"></script>
+</body>
+
+</html>

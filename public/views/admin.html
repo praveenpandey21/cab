@@ -1,0 +1,238 @@
+	<div class="container">
+	<div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-9 bhoechie-tab-container">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
+              <div class="list-group">
+                <a href="#" class="list-group-item active text-center">
+                  Cab Registering
+                </a>
+                <a href="#" class="list-group-item text-center">
+                  Driver
+                </a>
+                <a href="#" class="list-group-item text-center">
+                Car Type
+                </a>
+                <a href="#" class="list-group-item text-center">
+                 Offers
+                </a>
+                <a href="#" class="list-group-item text-center">
+                  Assign Movies
+                </a>
+
+              </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
+                <!-- flight section -->
+                <div class="bhoechie-tab-content active">
+                    <center>
+                      <table class="table">
+							            <thead>
+							                <tr>
+
+							                    <th>Cab Registering</th>
+
+							                </tr>
+							            </thead>
+							            <tbody>
+							                <tr>
+
+							                  <!--  <td><input ng-model="cabr.cabrdriverName" /></td>-->
+																<td><select ng-model="cabr.cabrdriverName" >
+																	 <option ng-repeat="driv in drivList" ng-value="driv.drivName">{{driv.drivName}}</option>
+
+																	</select></td>
+
+
+
+
+							                     <td><input ng-model="cabr.cabrcarName" placeholder="Enter your car name" /></td>
+							                      <td><input ng-model="cabr.cabrcarNumber" placeholder="Enter your car number"/></td>
+
+																		<td><select ng-model="cabr.cabrcarType" >
+								                    	 <option ng-repeat="crty in crtyList" ng-value="crty.cartype">{{crty.cartype}}</option>
+
+								                    	</select></td>
+
+							                    <td><button ng-click="addData(cabr)" class="btn btn-primary">Add Cab</button></td>
+							                    <td><button ng-click="updateData(cabr)" class="btn btn-primary">Update</button></td>
+
+							                </tr>
+							                <tr ng-repeat=" cabr in cabrList">
+							                    <td>{{cabr.cabrcarName}}</td>
+							                     <td>{{cabr.cabrcarNumber}}</td>
+																	 <td>{{cabr.cabrcarType}}</td>
+							                    <td><button ng-click="deleteData(cabr)" class="btn btn-danger">Remove</button></td>
+							                    <td><button ng-click="editData(cabr)" class="btn btn-primary">Edit</button></td>
+							                </tr>
+							            </tbody>
+							 </table>
+			                    </center>
+			                </div>
+			                <!-- train section -->
+			                <div class="bhoechie-tab-content">
+			                    <center>
+			                      <table class="table">
+							            <thead>
+							                <tr>
+																<th>Driver</th>
+																<th>Age</th>
+																<th>Gender</th>
+																<th>Phone</th>
+																<th>Liscence</th>
+
+							                </tr>
+							            </thead>
+							            <tbody>
+							                <tr>
+
+							                    <td><input placeholder="driver Name" ng-model="driv.drivName" /></td>
+							                    <td><input placeholder="driver Age" ng-model="driv.drivAge" /></td>
+																	<td><input placeholder="driver Gender" ng-model="driv.drivGender" /></td>
+							                    <td><input placeholder="driver Phone"  ng-model="driv.drivPhone" /></td>
+																	<td><input placeholder="driver License_no"  ng-model="driv.drivLiscence" /></td>
+
+							                    <td><button ng-click="addData(driv)" class="btn btn-primary">Add</button></td>
+							                    <td><button ng-click="updateData(driv)" class="btn btn-primary">Update</button></td>
+
+							                </tr>
+							                <tr ng-repeat=" driv in drivList">
+							                    <td>{{driv.drivName}}</td>
+							                    <td>{{driv.drivAge}}</td>
+							                     <td>{{driv.drivGender}}</td>
+							                    <td>{{driv.drivPhone}}</td>
+							                    <td><button ng-click="deleteData(driv)" class="btn btn-danger">Remove</button></td>
+							                    <td><button ng-click="editData(driv)" class="btn btn-primary">Edit</button></td>
+							                </tr>
+							            </tbody>
+							 </table>
+                    </center>
+                </div>
+
+                <!-- Show Times -->
+                <div class="bhoechie-tab-content">
+                    <center>
+                          <table class="table">
+			            <thead>
+			                <tr>
+												 <th>Car Type</th>
+ 										 </tr>
+			            </thead>
+			            <tbody>
+			                <tr>
+												<td><input ng-model="crty.crtyType" placeholder="enetr type of car(micro, mini etc)"/></td>
+												<td><button ng-click="addData(crty)" class="btn btn-primary">Add </button></td>
+												 <td><button ng-click="updateData(crty)" class="btn btn-primary">Update</button></td>
+											 </tr>
+			                <tr ng-repeat="crty in crtyList">
+			                    <td>{{crty.cartype}}</td>
+			                    <td><button ng-click="deleteData(crty)" class="btn btn-danger">Remove</button></td>
+			                    <td><button ng-click="editData(crty)" class="btn btn-primary">Edit</button></td>
+			                </tr>
+			            </tbody>
+			 </table>
+                    </center>
+                </div>
+
+
+								<div class="bhoechie-tab-content">
+                    <center>
+                          <table class="table">
+			            <thead>
+			                <tr>
+			                    <th>Car Type</th>
+			                    <th>Base Fare</th>
+			                    <th>Per Km</th>
+
+
+			                </tr>
+			            </thead>
+			            <tbody>
+			                <tr>
+
+
+												<td><select ng-model="ofer.crType" >
+													 <option ng-repeat="crty in crtyList" ng-value="crty.cartype">{{crty.cartype}}</option>
+												 </select></td>
+			                    <td><input ng-model="ofer.Basefare"  placeholder="enter Base Fare"/></td>
+			                    <td><input ng-model="ofer.Perkm" placeholder="enter kilometers" /></td>
+													<td><button ng-click="addData(ofer)" class="btn btn-primary">Add</button></td>
+  												<td><button ng-click="updateData(ofer)" class="btn btn-primary">Update</button></td>
+
+			                </tr>
+			                <tr ng-repeat="ofer in oferList">
+			                    <td>{{ofer.CrType}}</td>
+			                    <td>{{ofer.Basefare}}</td>
+			                    <td>{{ofer.Perkm}}</td>
+
+			                    <td><button ng-click="deleteData(ofer)" class="btn btn-danger">Remove</button></td>
+			                    <td><button ng-click="editData(ofer)" class="btn btn-primary">Edit</button></td>
+			                </tr>
+			            </tbody>
+			 </table>
+                    </center>
+                </div>
+
+
+
+                <div class="bhoechie-tab-content">
+                    <center>
+                          <table class="table">
+			            <thead>
+			                <tr>
+			                    <th>Timing ID</th>
+			                    <th>Time</th>
+
+			                </tr>
+			            </thead>
+			            <tbody>
+			                <tr>
+			                	<td>
+				                 		<select ng-model="asmv.asmvMovie">
+							                <option ng-model="asmv.asmvMovie" ng-repeat="movie in moviList" >{{movie.moviTitle}}</option>
+							            </select>
+							      </td>
+				                 <td>
+				                 		<select ng-model="asmv.asmvCity" ng-change="loadTheatres()">
+							                <option ng-model="asmv.asmvCity" ng-repeat="city in cityList" >{{city.cityName}}</option>
+							            </select>
+							      </td>
+
+							       <td>
+				                 		<select ng-model="asmv.asmvTheatre">
+							                <option ng-model="asmv.asmvTheatre" ng-repeat="theatre in cityTheatres" >{{theatre.thtrName}}</option>
+							            </select>
+							      </td>
+
+			                      <td>
+			                      		<input type="date"  ng-model="asmv.asmvFromDate" placeholder="yyyy-MM-dd" required />
+			                      </td>
+
+			                      <td>
+			                      		<input type="date"  ng-model="asmv.asmvToDate"
+       										placeholder="yyyy-MM-dd" required />
+			                      </td>
+
+			                    <td><button ng-click="addAssignMovie(asmv)" class="btn btn-primary">Add </button></td>
+
+			                   <!--  <td><button ng-click="updateData(asmv)" class="btn btn-primary">Update</button></td> -->
+
+			                </tr>
+			                <tr ng-repeat=" asmv in asmvList">
+			                    <td>{{asmv.asmvMovie}}</td>
+			                    <td>{{asmv.asmvCity}}</td>
+			                    <td>{{asmv.asmvTheatre}}</td>
+			                    <td>{{asmv.asmvFromDate}}</td>
+			                    <td>{{asmv.asmvToDate}}</td>
+			                    <td><button ng-click="deleteData(asmv)" class="btn btn-danger">Remove</button></td>
+			                   <!--  <td><button ng-click="editData(asmv)" class="btn btn-primary">Edit</button></td> -->
+			                </tr>
+			            </tbody>
+			 </table>
+                    </center>
+                </div>
+
+
+            </div>
+        </div>
+  </div>
+</div>
